@@ -73,7 +73,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         {{Form::label('form_phone', 'Phone')}}
-                                        {{Form::tel('phone', '', ['class'=>'form-control', 'id'=>'form_phone'])}}
+                                        {{Form::tel('phone', '', ['class'=>'form-control', 'id'=>'form_phone', 'placeholder' => 'Please enter your phone number'])}}
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -82,7 +82,8 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         {{Form::label('form_course', 'Course *')}}
-                                        {{Form::text('course', '', ['class'=>'form-control', 'id'=>'form_course', 'required', 'data-error'=>'Please enter your course.'])}}
+                                        {{Form::text('course', '', ['class'=>'form-control', 'id'=>'form_course', 'required', 'data-error'=>'Please enter your course.',
+                                        'placeholder'=>'Please enter your course.'])}}
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -93,7 +94,8 @@
                                         {{Form::label('form_subjects', 'Subjects *')}}
                                         {{Form::button('Add Subjects', ['class'=>'add_field_button btn btn-primary pull-right'])}}
                                         <div class="input_fields_wrap">
-                                            {{Form::text('subject[]', '', ['class'=>'form-control', 'id'=>'form_subject', 'required', 'data-error'=>'Please enter your subjects.'])}}        
+                                            {{Form::text('subject[]', '', ['class'=>'form-control', 'id'=>'form_subject', 'required', 'data-error'=>'Please enter your subjects.',
+                                            'placeholder' => 'Enter subject'])}}        
                                         </div>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -101,7 +103,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         {{Form::label('form_dob', 'Date of Birth')}}    
-                                        {{Form::text('date', '', ['class'=>'form-control', 'id'=>'datepicker', 'required'])}}        
+                                        {{Form::text('date', '', ['class'=>'form-control', 'id'=>'datepicker', 'required', 'placeholder'=>'Please enter your date of birth'])}}        
                                         </div>
                                         <div class="help-block with-errors"></div>
                                     </div>

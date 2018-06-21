@@ -53,7 +53,8 @@
                 e.preventDefault();
                 if(x < max_fields){ //max input box allowed
                     x++; //text box increment
-                    $(wrapper).append('<div><input type="text" class="form-control" id="form_subject" required name="subject[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
+                    $(wrapper).append('<div><input type="text" class="form-control" id="form_subject" required name="subject[]" placeholder="Enter subject"> \
+                    <a href="#" class="remove_field">Remove</a></div>'); //add input box
                 }
             });
             
