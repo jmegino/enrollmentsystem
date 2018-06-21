@@ -30,7 +30,13 @@
     <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
     <script>
     $(function() {
-      $( "#datepicker" ).datepicker();
+        $( "#datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange:'-100:+0',
+            maxDate:'+0'
+      });
+
     });
 
      $(function() {

@@ -52,21 +52,30 @@ class NewEnrolleesController extends Controller
             'course' => 'required',
             'subject' => 'required'
         ]);
-
-        //Submit new enrollee
+            
         $personalinfo = new personalinfos;
-        $personalinfo->firstname = $request->input('firstname');
-        $personalinfo->middlename = $request->input('middlename');
-        $personalinfo->surname = $request->input('surname');
-        $personalinfo->address = $request->input('address');
-        $personalinfo->phone = $request->input('phone');
-        $personalinfo->email = $request->input('email');
-        $personalinfo->course = $request->input('course');
-        $personalinfo->date = $request->input('date');
-        $personalinfo->subject= json_encode($request->input('subject'));
-        $personalinfo->save();
+        $user = personalinfos::where('email', $personalinfo->email)->exists();
+            if ($user === null) {
+            // user doesn't exist
+            //Submit new enrollee
+                $personalinfo->firstname = $request->input('firstname');
+                $personalinfo->middlename = $request->input('middlename');
+                $personalinfo->surname = $request->input('surname');
+                $personalinfo->address = $request->input('address');
+                $personalinfo->phone = $request->input('phone');
+                $personalinfo->email = $request->input('email');
+                $personalinfo->course = $request->input('course');
+                $personalinfo->date = $request->input('date');
+                $personalinfo->subject= json_encode($request->input('subject'));
+                $personalinfo->save();
 
-        return redirect('/')->with('success', 'Enrollment success');
+                return redirect('/')->with('success', 'Enrollment success');
+            }else {
+                return redirect('/enroll')->with('error','Enrollee already exists');
+            }
+
+        
+        
         
     }
 
